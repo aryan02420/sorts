@@ -1,0 +1,26 @@
+{
+  "name": "@aryan02420/sorts",
+  "version": "0.0.1",
+  "description": "multiple sorting algorithms implemented using generator functions",
+  "keywords": [
+    "sorting"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha --require mocha-steps"
+  },
+  "author": "aryan02420 <aryan02420@gmail.com>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aryan02420/sorts.git"
+  },
+  "bugs": {
+    "url": "https://github.com/aryan02420/sorts/issues"
+  },
+  "devDependencies": {
+    "chai": "^4.3.3",
+    "mocha": "^8.3.1",
+    "mocha-steps": "^1.3.0"
+  }
+}
