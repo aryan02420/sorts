@@ -8,7 +8,7 @@
   "keywords": [
     "sorting"
   ],
-  "main": "index.js",
+  "main": "lib/sorts.js",
   "scripts": {
     "test": "mocha --require mocha-steps"
   },
