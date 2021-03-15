@@ -1,9 +1,10 @@
-const {Bubble} = require('../');
+const sorts = require('../');
+const bubble = sorts().Bubble
 const expect = require('chai').expect
 
 describe('bubble sort', () => {
   let arr = [6,2,4,3,5,1] 
-  let s = Bubble(arr)
+  let s = bubble(arr)
   step('sorts?', () => {
     expect(s.next().value).to.have.ordered.members([ 2, 6, 4, 3, 5, 1 ])
     expect(s.next().value).to.have.ordered.members([ 2, 4, 6, 3, 5, 1 ])

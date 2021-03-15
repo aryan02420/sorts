@@ -1,9 +1,10 @@
-const {Insertion} = require('../');
+const sort = require('../');
+const insertion = sort().Insertion
 const expect = require('chai').expect
 
 describe('insertion sort', () => {
   let arr = [6,2,4,3,5,1] 
-  let s = Insertion(arr)
+  let s = insertion(arr)
   step('sorts?', () => {
     expect(s.next().value).to.have.ordered.members([ 2, 6, 4, 3, 5, 1 ])
     expect(s.next().value).to.have.ordered.members([ 2, 4, 6, 3, 5, 1 ])
