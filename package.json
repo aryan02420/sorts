@@ -39,7 +39,7 @@
       "index.js"
     ],
     "events": {
-        "restart": "npm run build"
+        "restart": "npm run build && npm run test"
     }
   },
   "dependencies": {}
