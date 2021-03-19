@@ -1,8 +1,8 @@
 const sorts = require('../');
-const sorter = sorts.Bubble;
+const sorter = sorts.Quick;
 const expect = require('chai').expect;
 
-describe('bubble sort', () => {
+describe('quick sort', () => {
   step('random', () => {
     let arr = [6,2,4,3,5,1];
     let s = sorter(arr);
