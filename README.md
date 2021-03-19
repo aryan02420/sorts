@@ -1,4 +1,4 @@
-# Sorts 
+# Sorts
 [![tests][tests-shield]][tests-url]
 [![npm][npm-shield]][npm-url]
 
@@ -7,6 +7,7 @@ different sorting algorithms implemented using generator functions
  - Bubble
  - Selection
  - Insertion
+ - Quick
 
 ### Installation
 
@@ -19,10 +20,28 @@ npm i @aryan02420/sorts
 ```js
 const {Bubble} = require('@aryan02420/sorts')
 let array = [2,5,3,7,1]
-let sort = Bubble(array)
+let bSort = Bubble(array)
 
-console.log(sort.next().value)   // [ 2, 3, 5, 7, 1 ]
-console.log(sort.next().value)   // [ 2, 3, 5, 1, 7 ]
+console.log(bsort.next().value.array)   // [ 2, 3, 5, 7, 1 ]
+console.log(bsort.next().value.array)   // [ 2, 3, 5, 1, 7 ]
+```
+
+```js
+const sortingAlgos = require('@aryan02420/sorts')
+let sSort = sortingAlgos.Selection(array)
+sSort.next()
+```
+
+```js
+const {Insertion: isort} = require('@aryan02420/sorts')
+let iSort = isort(array)
+iSort.next()
+```
+
+```js
+// browser
+qsort = sorts.Quick(array)
+qsort.next()
 ```
 
 [tests-shield]: https://img.shields.io/github/workflow/status/aryan02420/Sorts/tests?label=tests
