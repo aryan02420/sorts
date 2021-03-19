@@ -3,7 +3,7 @@ const sorter = sorts.Insertion  ;
 const expect = require('chai').expect;
 
 describe('insertion sort', () => {
-  step('random', () => {
+  it('random', () => {
     let arr = [6,2,4,3,5,1];
     let s = sorter(arr);
     let done = false;
@@ -15,8 +15,8 @@ describe('insertion sort', () => {
       done = next.done;
     }
     expect(sortedarr).to.have.ordered.members([ 1,2,3,4,5,6 ])
-  })
-  step('asc', () => {
+  });
+  it('asc', () => {
     let arr = [1,2,3,4,5,6];
     let s = sorter(arr);
     let done = false;
@@ -28,8 +28,8 @@ describe('insertion sort', () => {
       done = next.done;
     }
     expect(sortedarr).to.have.ordered.members([ 1,2,3,4,5,6 ])
-  })
-  step('desc', () => {
+  });
+  it('desc', () => {
     let arr = [6,5,4,3,2,1];
     let s = sorter(arr);
     let done = false;
@@ -41,5 +41,5 @@ describe('insertion sort', () => {
       done = next.done;
     }
     expect(sortedarr).to.have.ordered.members([ 1,2,3,4,5,6 ])
-  })
-})
+  });
+});
