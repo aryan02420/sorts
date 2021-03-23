@@ -81,6 +81,41 @@ module.exports = function*(arr) {
 },{}],3:[function(require,module,exports){
 module.exports = function*(arr) {
   arr = arr.slice();
+  let len = arr.length;
+  let sorted = false;
+  let shrink = 1.3;
+  let gap = len;
+  while (!sorted) {
+    gap = Math.floor(gap/shrink);
+    if (gap <= 1) {
+      sorted = true;
+      gap = 1;
+    }
+    for (i = 0; i < len-gap; i++) {
+      let j = i + gap;
+      yield {
+        array: arr.slice(),
+        i: i,
+        j: j,
+        k: len-gap
+      }
+      if (arr[i] > arr[j]) {
+        arr.swap(i, j);
+        yield {
+          array: arr.slice(),
+          i: i,
+          j: j,
+          k: len-gap
+        }
+        sorted = false;
+      }
+    }
+  }
+}
+
+},{}],4:[function(require,module,exports){
+module.exports = function*(arr) {
+  arr = arr.slice();
   let i, j;
   let len = arr.length;
   for (i = 1; i < len; i++) {
@@ -116,7 +151,7 @@ module.exports = function*(arr) {
   }
 }
 
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 const quicksort = function*(arr, lo, hi) {
   lo = lo ?? 0;
   hi = hi ?? arr.length;
@@ -149,7 +184,7 @@ module.exports = function*(arr) {
   yield* quicksort(arr, 0, arr.length-1);
 };
 
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 module.exports = function*(arr) {
   arr = arr.slice();
   let i, j;
@@ -182,7 +217,7 @@ module.exports = function*(arr) {
     }
   }
 }
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 require('./utils/swap')
 require('./utils/randomize')
 const Bubble = require('./algos/bubble')
@@ -190,15 +225,17 @@ const Selection = require('./algos/selection')
 const Insertion = require('./algos/insertion')
 const Quick = require('./algos/quick')
 const Cocktail = require('./algos/cocktail')
+const Comb = require('./algos/comb')
 module.exports = {
         Bubble,
         Selection,
         Insertion,
         Quick,
-        Cocktail
+        Cocktail,
+        Comb
     }
 
-},{"./algos/bubble":1,"./algos/cocktail":2,"./algos/insertion":3,"./algos/quick":4,"./algos/selection":5,"./utils/randomize":7,"./utils/swap":8}],7:[function(require,module,exports){
+},{"./algos/bubble":1,"./algos/cocktail":2,"./algos/comb":3,"./algos/insertion":4,"./algos/quick":5,"./algos/selection":6,"./utils/randomize":8,"./utils/swap":9}],8:[function(require,module,exports){
 Array.prototype.randomize = function (numswaps) {
   len = this.length
   numswaps = numswaps ?? len*3
@@ -211,7 +248,7 @@ Array.prototype.randomize = function (numswaps) {
   return this
 }
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 Array.prototype.swap = function (a, b) {
 	let temp = this[a]
 	this[a] = this[b]
@@ -219,5 +256,5 @@ Array.prototype.swap = function (a, b) {
 	return this
 }
 
-},{}]},{},[6])(6)
+},{}]},{},[7])(7)
 });
