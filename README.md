@@ -8,6 +8,8 @@ different sorting algorithms implemented using generator functions
  - Selection
  - Insertion
  - Quick
+ - Cocktail
+ - Comb
 
 ### Installation
 
