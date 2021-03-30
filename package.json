@@ -11,7 +11,7 @@
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "build": "browserify --standalone sorts ./lib/sorts.js -o index.js",
+    "build": "browserify --standalone sorts ./src/sorts.js -o index.js",
     "dev": "nodemon",
     "copy": "cp -f index.js ../sort-visualiser/sorts.js"
   },
@@ -39,7 +39,7 @@
       "index.js"
     ],
     "events": {
-      "restart": "npm run build && npm run copy"
+      "restart": "npm run build && npm run copy && npm run test"
     }
   },
   "dependencies": {}
