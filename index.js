@@ -35,7 +35,7 @@ module.exports = function*(arr) {
   let startindex = 0;
   let endindex = len - 1;
   let i;
-  while (startindex < endindex) {
+  while (startindex <= endindex) {
     newstartindex = endindex;
     newendindex = startindex;
     for (i = startindex; i <= endindex; i++) {
