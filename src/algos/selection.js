@@ -1,4 +1,4 @@
-module.exports = function*(arr) {
+module.exports.Selection = function*(arr) {
   arr = arr.slice();
   let i, j;
   let len = arr.length;

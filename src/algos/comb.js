@@ -1,4 +1,4 @@
-module.exports = function*(arr) {
+module.exports.Comb = function*(arr) {
   arr = arr.slice();
   let len = arr.length;
   let sorted = false;

@@ -1,4 +1,4 @@
-module.exports = function*(arr) {
+module.exports.Cocktail = function*(arr) {
   arr = arr.slice();
   let len = arr.length;
   let startindex = 0;

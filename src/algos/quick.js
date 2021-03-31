@@ -25,7 +25,7 @@ const quicksort = function*(arr, lo, hi) {
   yield {array: arr.slice(), i: lo, j: hi, k: [hi]};
 }
 
-module.exports = function*(arr) {
+module.exports.Quick = function*(arr) {
   arr = arr.slice();
   yield* quicksort(arr, 0, arr.length-1);
-};
+}
