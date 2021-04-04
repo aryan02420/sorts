@@ -5,11 +5,11 @@
 different sorting algorithms implemented using generator functions
 
  - Bubble
- - Selection
- - Insertion
- - Quick
  - Cocktail
  - Comb
+ - Insertion
+ - Quick
+ - Selection
 
 ### Installation
 
@@ -46,7 +46,13 @@ qsort = sorts.Quick(array)
 qsort.next()
 ```
 
+### Demo Project
+
+[aryan02420/sort-visualiser][demo-url]
+
+
 [tests-shield]: https://img.shields.io/github/workflow/status/aryan02420/Sorts/tests?label=tests
 [tests-url]: https://github.com/aryan02420/sorts/actions/workflows/test-runner.yml
 [npm-shield]: https://img.shields.io/npm/v/@aryan02420/sorts
 [npm-url]: https://www.npmjs.com/package/@aryan02420/sorts
+[demo-url]: https://github.com/aryan02420/sort-visualiser

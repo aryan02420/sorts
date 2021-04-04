@@ -14,7 +14,7 @@ module.exports = function(grunt) {
         dest: 'index.js',
       },
     },
-    
+
     browserify: {
       dev: {
         src: ['index.js'],
@@ -37,7 +37,7 @@ module.exports = function(grunt) {
         }
       }
     },
-    
+
     terser: {
       minify: {
         src: ['index.js'],
@@ -70,9 +70,9 @@ module.exports = function(grunt) {
         },
       },
     },
-    
+
   });
-  
+
   grunt.loadNpmTasks('grunt-mocha-test');
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-terser');

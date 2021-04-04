@@ -1,11 +1,8 @@
-Array.prototype.randomize = function (numswaps) {
-  len = this.length
-  numswaps = numswaps ?? len*3
-  while (numswaps > 0) {
-    let a = Math.floor(Math.random() * len)
-    let b = Math.floor(Math.random() * len)
-    this.swap(a, b)
-    numswaps--
+Array.prototype.randomize = function () {
+  let len = this.length;
+  for (let i = 0; i < len; i++) {
+    let j = Math.floor(Math.random() * (len-i)) + i;
+    this.swap(i, j);
   }
-  return this
+  return this;
 }

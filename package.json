@@ -15,6 +15,9 @@
     "dev": "grunt watch",
     "copy": "cp -f index.js ../sort-visualiser/sorts.js"
   },
+  "files": [
+    "index.js"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/aryan02420/sorts.git"
