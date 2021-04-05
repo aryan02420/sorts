@@ -26,7 +26,7 @@ module.exports = function(grunt) {
           }
         }
       },
-      prod: {
+      dist: {
         src: ['index.js'],
         dest: 'index.js',
         options: {
@@ -54,15 +54,26 @@ module.exports = function(grunt) {
         options: {
           reporter: 'spec',
           quiet: false, // Optionally suppress output to standard out (defaults to false)
-          noFail: false // Optionally set to not fail on failed tests (will still fail on other errors)
+          noFail: true // Optionally set to not fail on failed tests (will still fail on other errors)
         }
+      }
+    },
+
+    copy: {
+      main: {
+        files: [{
+          expand: true,
+          src: 'index.js',
+          dest: '../sort-visualiser/',
+          rename: function(d,s) {return '../sort-visualiser/sorts.js'}
+        }]
       }
     },
 
     watch: {
       scripts: {
         files: ['./src/**/*.js'],
-        tasks: ['dev'],
+        tasks: ['dev', 'copy'],
         options: {
           spawn: false,
           interrupt: true,
@@ -77,9 +88,10 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-browserify');
   grunt.loadNpmTasks('grunt-terser');
   grunt.loadNpmTasks('grunt-contrib-concat');
+  grunt.loadNpmTasks('grunt-contrib-copy');
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  grunt.registerTask('default', ['concat', 'browserify:prod', 'terser', 'mochaTest']);
+  grunt.registerTask('default', ['concat', 'browserify:dist', 'terser', 'mochaTest']);
   grunt.registerTask('dev', ['concat', 'browserify:dev', 'mochaTest']);
 
 };
